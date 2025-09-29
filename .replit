@@ -1,0 +1,13 @@
+entrypoint = "main.py"
+modules = ["bash", "python-3.10"]
+
+[nix]
+channel = "stable-24_05"
+packages = ["cairo", "ffmpeg-full", "freetype", "ghostscript", "glibcLocales", "gobject-introspection", "gtk3", "pkg-config", "qhull", "tcl", "tk"]
+
+[deployment]
+run = ["bash", "main.sh"]
+deploymentTarget = "cloudrun"
+
+[agent]
+expertMode = true
