@@ -5,44 +5,44 @@ import os  #, sys  #Добавлен импорт sys
 for i in ['key1', 'key2', 'key3']:
   print('key: ', os.getenv(i)) #Добавлено слово key
 
-# from sympy import *  #Что это такое (Ответ: это импорт всех методов/классов из библиотеки sympy) 5/5
-# k, T, C, L = symbols('k T C L')
-# #1
-# C_ost = 1000000
-# Am_lst = []
-# C_ost_lst = []
-# for i in range(5):
-#   Am = (C-L)/T
-#   C_ost -= Am.subs({C:1000000, T:5, L:0})
-#   Am_lst.append(round(Am.subs({C:1000000, T:5, L:0}),2))
-#   C_ost_lst.append(round(C_ost,2))
-# print('Am_lst', Am_lst)
-# print('C_ost_lst', C_ost_lst)
-# # # из блока выше убрана вторая решетка
+from sympy import *  #Что это такое (Ответ: это импорт всех методов/классов из библиотеки sympy) 5/5
+k, T, C, L = symbols('k T C L')
+#1
+C_ost = 100000
+Am_lst = []
+C_ost_lst = []
+for i in range(5):
+  Am = (C-L)/T
+  C_ost -= Am.subs({C:100000, T:5, L:0})
+  Am_lst.append(round(Am.subs({C:100000, T:5, L:0}),2))
+  C_ost_lst.append(round(C_ost,2))
+print('Am_lst', Am_lst)
+print('C_ost_lst', C_ost_lst)
+# # из блока выше убрана вторая решетка
 
-# # #2
-# # Aj = 0
-# # C_ost = 1000000
-# # Am_lst2 = []
-# # C_ost_lst2 = []
-# # for i in range(5):
-# #   Am = k/T *(C-Aj) #Что такое k
-# #   C_ost -= Am.subs({C:1000000, T:5, L:0, k:2})
-# #   Am_lst2.append(round(Am.subs({C:1000000, T:5, L:0, k:2}),2))
-# #   Aj += Am
-# #   C_ost_lst2.append(round(C_ost,2))
-# # print('Am_lst2', Am_lst2)
-# # print('C_ost_lst2', C_ost_lst2)
+#2
+Aj = 0
+C_ost = 100000
+Am_lst2 = []
+C_ost_lst2 = []
+for i in range(5):
+  Am = k/T *(C-Aj) #Что такое k
+  C_ost -= Am.subs({C:100000, T:5, L:0, k:2})
+  Am_lst2.append(round(Am.subs({C:100000, T:5, L:0, k:2}),2))
+  Aj += Am
+  C_ost_lst2.append(round(C_ost,2))
+print('Am_lst2', Am_lst2)
+print('C_ost_lst2', C_ost_lst2)
 
-# # #tableview container
-# # import pandas as pd
-# # Y= range(1,6)
-# # table1 = list(zip(Y, C_ost_lst, Am_lst))
-# # table2 = list(zip(Y, C_ost_lst2, Am_lst2))
-# # tFrame = pd.DataFrame(table1, columns=['Y', 'C_ost', 'Am'])
-# # tFrame2 = pd.DataFrame(table2, columns=['Y', 'C_ost2', 'Am2'])
-# # print(tFrame)
-# # print(tFrame2)
+#tableview container
+import pandas as pd
+Y= range(1,6)
+table1 = list(zip(Y, C_ost_lst, Am_lst))
+table2 = list(zip(Y, C_ost_lst2, Am_lst2))
+tFrame = pd.DataFrame(table1, columns=['Y', 'C_ost', 'Am'])
+tFrame2 = pd.DataFrame(table2, columns=['Y', 'C_ost2', 'Am2'])
+print(tFrame)
+print(tFrame2)
 
 #Variant2
 
